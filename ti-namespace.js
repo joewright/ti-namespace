@@ -29,7 +29,7 @@ Ti.Network = {
                 };
             },
             send: function(data) {
-                r.body = data;
+                r.body = JSON.stringify(data);
                 if(r.fpath) {
                     var stream = fs.createWriteStream(r.fpath);
                     request(r, callback).pipe(stream);
