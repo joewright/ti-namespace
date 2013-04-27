@@ -64,6 +64,7 @@ Ti.Network = {
 }
 
 Ti.Filesystem = {
+    resourcesDirectory: process.cwd() + '/assets',
     applicationDataDirectory: process.cwd(),
     getFile: function() {
         var filepath = _.values(arguments).join('/');
