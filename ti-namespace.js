@@ -30,6 +30,10 @@ Ti.Network = {
             },
             send: function(data) {
                 r.body = JSON.stringify(data);
+                if(data) {
+                    r.body = data;
+                    r.json = true;
+                }
                 if(r.fpath) {
                     var stream = fs.createWriteStream(r.fpath);
                     request(r, callback).pipe(stream);
@@ -42,6 +46,7 @@ Ti.Network = {
                         return config.onerror(err);
                     }
                     if (config.onload) {
+                        if(r.json) body = JSON.stringify(body);
                         config.responseText = body;
                         config.onload()
                     }
