@@ -1,6 +1,17 @@
 {
   "name": "ti-namespace",
+  "description": "Mock Titanium JS namespace for Node.",
   "version": "0.0.1",
+  "tags": [
+    "titanium"
+  ],
+  "author": {
+    "name": "Joe Wright"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/joewright/ti-namespace.git"
+  },
   "engines": [
     "node >= 0.8.0"
   ],
