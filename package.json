@@ -1,0 +1,13 @@
+{
+  "name": "ti-namespace",
+  "version": "0.0.1",
+  "engines": [
+    "node >= 0.8.0"
+  ],
+  "dependencies": {
+    "underscore": "~1.4.4",
+    "request": "~2.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}
