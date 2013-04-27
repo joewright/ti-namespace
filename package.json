@@ -9,5 +9,6 @@
     "request": "~2.20.0"
   },
   "devDependencies": {},
+  "main": "ti-namespace.js",
   "scripts": {}
 }
