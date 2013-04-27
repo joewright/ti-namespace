@@ -25,7 +25,8 @@ Ti.Network = {
             open: function(method, url) {
                 r = {
                     method: method,
-                    url: url
+                    url: url,
+                    followRedirect: (config.autoRedirect === false) ? false : true
                 };
             },
             send: function(data) {
@@ -34,8 +35,8 @@ Ti.Network = {
                     r.body = data;
                     r.json = true;
                 }
-                if(r.fpath) {
-                    var stream = fs.createWriteStream(r.fpath);
+                if(r.file) {
+                    var stream = fs.createWriteStream(r.file);
                     request(r, callback).pipe(stream);
                 } else {
                     request(r, callback);
@@ -52,8 +53,8 @@ Ti.Network = {
                     }
                 }
             },
-            setFile: function(fpath) {
-                r.fpath = fpath;
+            setFile: function(file) {
+                r.file = file.nativePath || file;
             }
         }
     },
@@ -63,7 +64,7 @@ Ti.Network = {
 }
 
 Ti.Filesystem = {
-    applicationDataDirectory: __dirname,
+    applicationDataDirectory: process.cwd(),
     getFile: function() {
         var filepath = _.values(arguments).join('/');
         return new file(filepath);
