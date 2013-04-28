@@ -99,6 +99,17 @@ function file(fpath) {
     return f;
 }
 
-Ti.Geolocation = {}
+Ti.Geolocation = {
+    locationServicesAuthorization: -1,
+    AUTHORIZATION_AUTHORIZED: 1,
+    getCurrentPosition: function() {
+        return {
+            coords: {
+                latitude: 0,
+                longitude: 0
+            }
+        }
+    }
+}
 
 module.exports = Ti;
