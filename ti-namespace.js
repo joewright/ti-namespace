@@ -4,6 +4,8 @@ var fs = require('fs'),
 
 var Ti = function() {};
 
+Ti._isTestEnv = true;
+
 Ti.App = {};
 function set(prop, val) {
     process.env[prop] = val;
