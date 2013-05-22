@@ -95,6 +95,12 @@ function file(fpath) {
             f.deleteFile = function() {
                 return fs.unlinkSync(fpath);
             }
+            f.read = function() {
+                f.toString = function() {
+                    return fs.readFileSync(fpath, 'utf-8');
+                };
+                return f;
+            }
             f.size = stat.size;
         }
     }
