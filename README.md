@@ -38,7 +38,7 @@ Ti.Network
     * open
     * send
     * setFile
-
+* online
 * decodeURIComponent
 
 Ti.Filesystem
@@ -50,6 +50,14 @@ Ti.Filesystem.File
 * createDirectory
 * deleteFile
 * size
+
+Ti.Database
+
+Ti.Geolocation
+
+Ti.iOS
+
+Ti.XML
 
 TODO:
 Testing, more examples.
